@@ -21,19 +21,22 @@ export default function AuthForm() {
         await new Promise(resolve => setTimeout(resolve, 2000)) // Simulating API call
 
         setIsLoading(false)
-        setMessage('Magic link sent! Check your email.')
+        // setMessage('Magic link sent! Check your email.')
         setEmail('')
     })
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div
+            className="flex items-center justify-center min-h-screen bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://img.freepik.com/vetores-gratis/fundo-de-estrutura-de-arame-abstrato-cinza_53876-99911.jpg?t=st=1729822207~exp=1729825807~hmac=4655e5040831c089e4835a53f642de93be5087b001b8b488af1ef93ed234a794&w=1380)' }}
+        >
 
             <Card className="w-[350px]">
                 {/* <SnowEffect /> */}
                 <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl font-bold text-center">Sign in</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-center">Entrar</CardTitle>
                     <CardDescription className="text-center">
-                        Enter your email to receive a magic link
+                        Bhayron no Natham
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -43,8 +46,15 @@ export default function AuthForm() {
                             <Input
                                 id="email"
                                 type="email"
-                                placeholder="name@example.com"
+                                placeholder="bhayronklivilan@gmail.com"
                                 {...form.register('email')}
+                                required
+                            />
+                            <Label htmlFor="email">Senha</Label>
+                            <Input
+                                id="senha"
+                                type="password"
+                                {...form.register('name')}
                                 required
                             />
                         </div>
@@ -55,7 +65,7 @@ export default function AuthForm() {
                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
                             ) : null}
-                            Send Magic Link
+                            Entrar
                         </Button>
                     </form>
                 </CardContent>
